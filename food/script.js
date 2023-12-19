@@ -10,6 +10,7 @@ const fetchRecipes = async (query) => {
         
     
     const data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
+    
     const response = await data.json();
 
     recipeContainer.innerHTML = "";
@@ -83,3 +84,6 @@ searchBtn.addEventListener('click', (e)=>{
     fetchRecipes(searchInput);
     // console.log("Button Clicked");
 });
+
+    
+

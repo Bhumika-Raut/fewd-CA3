@@ -220,6 +220,8 @@ body::-webkit-scrollbar-track{
 }
 
 
+
+
 @media screen and (max-width:600px) {
     header nav{
         flex-direction: column;
@@ -236,6 +238,7 @@ body::-webkit-scrollbar-track{
         display: flex;
         align-items: center;
         justify-content: center;
+        
 
     }
     .logo{
@@ -244,6 +247,11 @@ body::-webkit-scrollbar-track{
         height: 80%;
         width: 80%;
 
+    }
+    header .belownav{
+        background-size: cover;
+        background-color: rgba(68, 9, 9, 0.625);
+        background-repeat: inherit;
     }
     
 }
