@@ -8,7 +8,9 @@
 body{
     background-color: #2b1d0f;
     color: aliceblue;
-    background-image: url('imgs/keith-misner-h0Vxgz5tyXA-unsplash.jpg');
+    background-image: url('imgs/backgroundimg.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
     
 }
 header nav{
@@ -91,6 +93,7 @@ form button[type="submit"]:hover,
     margin: 10px auto;
     /* padding: 20px; */
     place-items: center;
+    color: #000000;
 }
 .recipe{
     background-color: white;
@@ -218,8 +221,7 @@ body::-webkit-scrollbar-thumb{
 body::-webkit-scrollbar-track{
     background-color: aliceblue;
 }
-
-
+  
 
 
 @media screen and (max-width:600px) {

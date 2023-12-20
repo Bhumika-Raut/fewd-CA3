@@ -4,6 +4,11 @@ const recipeContainer = document.querySelector('.recipe-container');
 const recipeDetailsContent = document.querySelector('.recipe-details-content');
 const recipeCloseBtn = document.querySelector('.recipe-close-btn');
 
+
+
+
+
+
 const fetchRecipes = async (query) => {
     recipeContainer.innerHTML = "<h2>Searching...please wait 🙂</h2>";
     try {
@@ -85,5 +90,17 @@ searchBtn.addEventListener('click', (e)=>{
     // console.log("Button Clicked");
 });
 
-    
+if (userInput.trim() !== "") {
+    fetch(`https://www.themealdb.com/api/json/v1/1/random.php?s=${userInput})`)
+    .then((response) =>response.json())
+    .then((data)=>{
+        if (data.meals){
+            const randomMeal = data.meals[Math.floor(Math.random()* data.meals.length)];
+        }
+
+    });
+}
+
+
+
 
