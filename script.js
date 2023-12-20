@@ -4,18 +4,13 @@ const recipeContainer = document.querySelector('.recipe-container');
 const recipeDetailsContent = document.querySelector('.recipe-details-content');
 const recipeCloseBtn = document.querySelector('.recipe-close-btn');
 
-
-
-
-
-
 const fetchRecipes = async (query) => {
     recipeContainer.innerHTML = "<h2>Searching...please wait 🙂</h2>";
     try {
         
-    
+    // used asyn-await for handling the assync function, try-catch for getting result or error
     const data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
-    
+    // link fetched for searches
     const response = await data.json();
 
     recipeContainer.innerHTML = "";
@@ -34,14 +29,19 @@ const fetchRecipes = async (query) => {
         button.addEventListener('click', () => {
         openRecipePopup(meal);
         });
+        //did styling for each, 
+        // added button by creating element for view recipe pop-up
+        // add event listener for the event of button click
  
         recipeContainer.appendChild(recipeDiv);
         
     });
+    
 } catch (error) {
     recipeContainer.innerHTML = "<h2>Error: No such food item found ☹️</h2>";
         
 }
+//catch error and print the above message if the food is not found 
     
     // console.log(response);
 }
@@ -58,7 +58,8 @@ const fetchIngredients = (meal) => {
         else{
             break;
         }
-
+    // fetched ingredients, those were = 20 (as per the data consoled) 
+    // so used loop for the number of ingredients and measure of those
     }
     return ingredientsList;
 
@@ -77,7 +78,7 @@ const openRecipePopup = (meal) => {
     
     recipeDetailsContent.parentElement.style.display = "block";
 }
-
+// it is when the pop up is opened
 recipeCloseBtn.addEventListener('click', ()=>{
     recipeDetailsContent.parentElement.style.display = "none";
 
@@ -88,6 +89,8 @@ searchBtn.addEventListener('click', (e)=>{
     const searchInput = searchBox.value.trim();
     fetchRecipes(searchInput);
     // console.log("Button Clicked");
+
+    //  searches apper only when searched
 });
 
 if (userInput.trim() !== "") {
@@ -100,7 +103,9 @@ if (userInput.trim() !== "") {
 
     });
 }
-
+Reload.addEventListener('click', (e)=>{    
+    // console.log("Button Clicked");
+});
 
 
 
